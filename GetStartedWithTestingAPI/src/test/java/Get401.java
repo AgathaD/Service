@@ -49,7 +49,7 @@ public class Get401 extends BaseClass {
 
     @Test(dataProvider = "endpoints")
     public void Returns401(String endpoint) throws IOException {
-        HttpGet get = new HttpGet(BASE_ENDPOINT);
+        HttpGet get = new HttpGet(BASE_ENDPOINT  + endpoint);
 
         response = client.execute(get);
         int statusCode = response.getStatusLine().getStatusCode();
